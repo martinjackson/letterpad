@@ -5,19 +5,19 @@
     "main": "start.js",
     "private": true,
     "scripts": {
-        "build": "NODE_ENV=production && babel api -d apiBuild && webpack --colors --display-error-details --config webpack/webpack.prod.js --env.theme=${theme}",
-        "build:theme": "NODE_ENV=production webpack --colors --display-error-details --config webpack/webpack.theme.prod.js --env.theme=${theme}",
-        "build:admin": "NODE_ENV=production webpack --colors --display-error-details --config webpack/webpack.admin.prod.js",
+        "build": "cross-env NODE_ENV=production && babel api -d apiBuild && webpack --colors --display-error-details --config webpack/webpack.prod.js --env.theme=${theme}",
+        "build:theme": "cross-env NODE_ENV=production webpack --colors --display-error-details --config webpack/webpack.theme.prod.js --env.theme=${theme}",
+        "build:admin": "cross-env NODE_ENV=production webpack --colors --display-error-details --config webpack/webpack.admin.prod.js",
         "clean": "rm -rf data && rm -rf public/uploads",
         "seed": "node ./api/seed",
-        "preinstall": "./utils/preinstall.sh",
-        "postinstall": "./utils/postinstall.sh",
-        "dev": "NODE_ENV=dev concurrently --kill-others \"nodemon -w api ./api/start.js\" \"node ./server.js --profile --json\" \"webpack --config webpack/webpack.dev.js --env.theme=${theme}\"",
-        "prod": "NODE_ENV=production concurrently --kill-others \"node ./apiBuild/server.js\" \"node ./server.js\"",
-        "prodPm2": "NODE_ENV=production concurrently --kill-others \"pm2 start ./apiBuild/server.js --name=lpDemoApi\" \"pm2 start ./server.js --name=lpDemo\"",
+        "preinstall": "bash ./utils/preinstall.sh",
+        "postinstall": "bash ./utils/postinstall.sh",
+        "dev": "cross-env NODE_ENV=dev concurrently --kill-others \"nodemon -w api ./api/start.js\" \"node ./server.js --profile --json\" \"webpack --config webpack/webpack.dev.js --env.theme=${theme}\"",
+        "prod": "cross-env NODE_ENV=production concurrently --kill-others \"node ./apiBuild/server.js\" \"node ./server.js\"",
+        "prodPm2": "cross-env NODE_ENV=production concurrently --kill-others \"pm2 start ./apiBuild/server.js --name=lpDemoApi\" \"pm2 start ./server.js --name=lpDemo\"",
         "test": "jest --runInBand",
         "translate": "node ./utils/translation_tools",
-        "precommit": "./utils/precommit.sh"
+        "precommit": "bash ./utils/precommit.sh"
     },
     "env": {
         "jest": true
@@ -45,6 +45,7 @@
         "body-parser": "^1.15.2",
         "compression": "^1.7.2",
         "cors": "^2.8.1",
+        "cross-env": "^5.2.0",
         "disqus-react": "^1.0.5",
         "express": "^4.13.4",
         "express-graphql": "^0.6.3",
