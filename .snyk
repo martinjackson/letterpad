@@ -1,0 +1,28 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - sequelize > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - graphql-tools > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - slate > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - react-hot-loader > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - sequelize-cli > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - slate-react > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - react-sortable-tree-theme-full-node-drag > react-dnd-html5-backend > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - react-sortable-tree-theme-full-node-drag > react-dnd > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - react-apollo > apollo-client > redux > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - react-sortable-tree-theme-full-node-drag > react-dnd > dnd-core > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
+    - react-sortable-tree-theme-full-node-drag > react-dnd > dnd-core > redux > lodash:
+        patched: '2019-07-04T07:01:12.453Z'
