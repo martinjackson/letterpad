@@ -84,7 +84,7 @@
         "react-sortable-tree": "^2.8.0",
         "react-sortable-tree-theme-full-node-drag": "^1.1.0",
         "reading-time": "*",
-        "sequelize": "6.3.5",
+        "sequelize": "6.6.5",
         "sequelize-cli": "^6.2.0",
         "sharp": "^0.26.1",
         "slate": "^0.58.4",
